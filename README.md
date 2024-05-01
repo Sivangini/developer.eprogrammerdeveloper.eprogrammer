@@ -1,2 +1,2 @@
-# developer.eprogrammerdeveloper.eprogrammer
+# developer.eprogrammer
 I have done this project during my apprenticeship.
