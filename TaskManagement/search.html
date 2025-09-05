@@ -1,0 +1,273 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<!--bootstrap cdn--->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="CSS/task.css">
+		<link rel="stylesheet" href="CSS/task-info.css">
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		
+		<title>Task Management</title>
+		<link rel="icon" href="images/task.png" sizes="96x96" type="image/png">
+		<!---jquery cdn-->
+		<script src="jslib/jquery-3.7.1.min.js"></script>
+		<script src="jslib/jqueryui/jquery-ui.min.js"></script>
+		<link href="jslib/jqueryui/jquery-ui.min.css" type="text/css" rel="stylesheet"/>
+		<!---CSS part-->
+		<style>
+			input::placeholder
+			{
+			font-size:20px;
+			}
+			/*table css*/
+			#tbl th,#tbl1 th
+			{
+			font-size:23px;
+			background-color:blue;
+			height:34px;
+			color:white;
+			}
+			#tbl td,#tbl1 td
+			{
+			font-size:18px;
+			background-color:white;
+			height:29px;
+			color:black;
+			}
+		</style>	
+	</head>
+	<body  class="bodypart">
+        <br><br><br><br><br>
+		<h2 style="text-align:center;color: #05386b;font-weight:bold;margin-top:15px;">Search <font style="color:#008ca8;border-bottom:5px solid  #05386b;border-radius:10px;">Your Task</font></h2><br><br>
+		<!----search bar form open----->
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-2"></div>
+				<div class="col-sm-8">
+					<form>
+						<br>
+						<input type="text" id="txtdate" placeholder="Search your task by due Date....."style=" height:70px;width:80%";/>
+						<input type="button" class="btn btn-primary " id="serchButton" style="height:70px;width:18%;" value="Search"/>
+					</form>	
+				</div>
+				<div class="col-sm-2"></div>
+			</div>
+			
+		</div><br><br>
+		<!---Table Row --->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<table id="tbl" class="table table-bordered striped">
+						
+					</table>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<table id="tbl1" class="table table-bordered striped">
+						
+					</table>
+				</div>
+			</div>
+		</div>
+		<!---footer part--->
+		<div class="container-fluid divheader">
+			<div class="row">
+				
+				<div class="col-sm-9">
+					<h1 style="margin-top:10px;margin-left:5px;font-family:serif;">Summary of the site <i class="fa-solid fa-earth-europe"></i></h1>
+					
+				</div>
+				<div class="col-sm-3" style="margin-top:22px;border-left:1px solid #004d4d;">
+					<i class="fa-brands fa-facebook fa-bounce fa-2x"></i>
+					<i class="fa-brands fa-twitter fa-bounce fa-2x"></i>
+					<i class="fa-brands fa-square-instagram fa-bounce fa-2x"></i>
+					<i class="fa-brands fa-square-snapchat fa-bounce fa-2x"></i>
+					<i class="fa-brands fa-telegram fa-bounce fa-2x"></i>
+				</div>
+			</div>
+			<hr style="border:1px solid #004d4d;">
+			<div class="row">
+				<div class="col-sm-4"  data-aos="fade-down" data-aos-duration="3000">
+					<div class="row">
+						<div class="col-sm-12">
+							<h2 style="font-family: 'Roboto', sans-serif;">The <font style="color:#05386b;border-bottom:4px solid #05386b;border-radius:7px;">Task Desk</font></h2><br>
+							<h5 style="text-align:justify;border-left:3px solid #004d4d;padding-left:5px;">This is a site which help you to set your task and it differentiate the completed and added task too.It can help you to recall the important work which you added in it.<br>
+							You can easily sort and filter your task.It is a user friendly site.</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-3"  data-aos="fade-up" data-aos-duration="3000">
+					<div class="row">
+						<div class="col-sm-2"></div>
+						<div class="col-sm-10">
+							<h3 style="font-family:serif;color:#05386b;font-weight:bold;">Important Links</h3><br>
+							<ul style="list-style-type:none;margin-left:-25px;">
+								<a href="dash.html" style="text-decoration:none;color:white;"><li>Dashboard</li></a>
+								<a href="task.html" style="text-decoration:none;color:white;"><li>Add Task</li></a>
+								<a href="search.html" style="text-decoration:none;color:white;"><li>Search Task</li></a>
+								<a href="contact.html" style="text-decoration:none;color:white;"><li>Contact Us</li></a>
+								<a href="todolist.html" style="text-decoration:none;color:white;"><li>To Do List</li></a>
+								<a href="feedback.html" style="text-decoration:none;color:white;"><li>Feedback</li></a>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-2"  data-aos="fade-down" data-aos-duration="3000">
+					<h3 style="font-family:serif;color:#05386b;font-weight:bold;">Contact details</h3><br>
+					<ul style="list-style-type:none;color:white;margin-left:-25px;">
+						<li><i class="fa-brands fa-whatsapp"></i>&nbsp; +91 8736576874</li>
+						<li><i class="fa-solid fa-envelope"></i>&nbsp;  admin@gmai.com</li>
+						<li><i class="fa-solid fa-phone"></i>&nbsp; +91 87634857847 <br>+91 8343898764</li>
+						<li><i class="fa-solid fa-location-dot"></i>&nbsp; Lucknow,Uttar Pradesh</li>
+					</ul>
+				</div>
+				<div class="col-sm-1"></div>
+				<div class="col-sm-2"  data-aos="fade-up" data-aos-duration="3000">
+					<img src="images/logo1.png" height="90px"/><br><br>
+					<form class="form-inline my-2 my-lg-0">
+						<input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-danger my-1 my-sm-0" type="submit">Subscribe</button>
+					</form>
+				</div>
+			</div><br><br>
+			<div class="row">
+				<div class="col-sm-12" style="background:black;height:45px;">
+					<h6 style="color:white;margin-top:9px;text-align:center;">Copyright &copy; All right reserved...&nbsp;&nbsp;&nbsp;Developed By The Programmers Gang</h6>
+				</div>
+			</div>
+		</div>
+		<!---Box for menubar--->
+		<div class="container-fluid" style="background-image:linear-gradient(to top, #008ca8, #00b5a6,#5cdb95);opacity:0.9;position:fixed;top:0px;">
+			<div class="row">
+				<div class="col-sm-4">
+					<img src="images/logo1.png" height="90px" width="50%"/> 
+				</div>
+				<div class="col-sm-8"><i class="fa-sharp fa-solid fa-bars fa-beat fa-2x" style="position:fixed;right:16px;top:14px;display:block;color:#05386b;cursor:pointer;" id="crossbtn1"></i>
+				</div>
+			</div>
+		</div>
+		
+		<div id="divmenu" class="menudiv">
+			<i class="fa-solid fa-xmark fa-beat-fade fa-3x" style="position:fixed;right:16px;color:#05386b;top:10px;cursor:pointer;" id="crossbtn2"></i><br><br><br><br><br>
+			<ul style="list-style-type:none;">
+				<a href="dash.html" style="text-decoration:none;"><li class="menuItems"><i class="fa-solid fa-house fa-fade fonticons"></i> &nbsp; My Dashboard</li></a>
+				<br>
+				<a href="task.html" style="text-decoration:none;"><li  class="menuItems"><i class="fa-solid fa-list-check fa-fade fonticons"></i> &nbsp; My Daily Task</li></a>
+				<br>
+				<a href="search.html" style="text-decoration:none;"><li class="menuItems"><i class="fa-solid fa-magnifying-glass fa-fade fonticons"></i> &nbsp; Search</li></a>
+				<br>
+				<a href="contact.html" style="text-decoration:none;"><li class="menuItems"><i class="fa-solid fa-address-book fa-fade fonticons"></i> &nbsp; Contact Us</li></a>
+				<br>
+				<a href="feedback.html" style="text-decoration:none;"><li class="menuItems"><i class="fa-solid fa-comments fa-fade fonticons"></i> &nbsp; Feedback</li></a>
+				<br>
+				<a href="todolist.html" style="text-decoration:none;"><li class="menuItems"><i class="fa-solid fa-layer-group fa-fade fonticons"></i> &nbsp; To Do List</li></a>
+				<br>
+				<li class="menuItems"  onclick="Logout()" style="cursor:pointer;"><i class="fa-solid fa-right-from-bracket fa-fade fonticons"></i> &nbsp; Logout</li>
+			</ul>
+		</div>
+		<!----search bar form open----->
+		
+		<!--Script part-->	
+		<script>
+			//fetch  user data from local storage
+			user_record=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+			let tasks = JSON.parse(localStorage.getItem('taskInfo')) || [];
+			let completedTasks = JSON.parse(localStorage.getItem('completedInfo')) || [];
+			
+			//function for logout
+			function Logout()
+			{
+				localStorage.removeItem("name");
+				localStorage.removeItem("email");
+				window.location.href="viewPage.html";
+			}
+			//function for show and hide menubar
+			$(document).ready(function(){
+				$("#crossbtn1").click(function(){
+					$("#divmenu").fadeIn(1000);
+					$(this).css("display","none");
+					$("#crossbtn2").css("display","block");
+				});		
+				$("#crossbtn2").click(function(){
+					$("#divmenu").fadeOut(1000);
+					$("#crossbtn1").css("display","block");
+					$(this).css("display","none");
+				});
+				//function for dynamic date picker
+				
+				$("#txtdate").datepicker({changeMonth:true,changeYear:true,yearRange:'2000:2045',dateFormat:"yy-mm-dd"});
+				//fatch data
+				$("#serchButton").click(function(){
+					var date=$("#txtdate").val().trim();
+					//alert(date);
+					
+					//displayTasksInTable(res);
+					var flag=0,flag1=0;
+					var res="<h4>Added Task Table</h4><tr><th>Due Date</th><th>Title</th><th>Discription</th><th>Complition Status</th></tr>";
+					for (p=0;p<tasks.length;p++)   ///var p in tasks	for
+					{
+						
+						if((localStorage.getItem("email")==tasks[p].email1) && (date==tasks[p].dueDate))
+						{
+							flag++;   
+							res=res+"<tr><td>"+tasks[p].dueDate+"</td><td>"+tasks[p].title+"</td><td>"+tasks[p].description+"</td><td><font style='color:red;'>Pending</font></td></tr>";
+							displayTasksInTable(res);
+						}
+						
+					}	
+					if(flag==0)
+					{
+						$("#tbl").html("<h2 style='color:red;'>Sorry no added task record available!</h2>");
+					}
+					//function for display completed table
+					var res1="<h4>Completed Task Table</h4><tr><th>Due Date</th><th>Title</th><th>Discription</th><th>Complition Status</th></tr>";
+					
+					for (p=0;p<completedTasks.length;p++)   ///var p in tasks	for
+					{
+						
+						if((localStorage.getItem("email")==completedTasks[p].email1) && (date==completedTasks[p].dueDate))
+						{
+							flag1++;  
+							res1=res1+"<tr><td>"+completedTasks[p].dueDate+"</td><td>"+completedTasks[p].title+"</td><td>"+completedTasks[p].description+"</td><td><font style='color:green;'>Completed</font></td></tr>";
+							displayCompletedTasksInTable(res1);
+						}
+					}
+					if(flag1==0)
+					{
+						$("#tbl1").html("<h2 style='color:red;'>Sorry no completed task record available!</h2>");
+					}
+					
+				})
+			});
+			
+			// Function to display tasks
+			function displayTasksInTable(res){
+				//alert("ok");
+				
+				$("#tbl").html(res);
+			}
+			function displayCompletedTasksInTable(res1){
+				$("#tbl1").html(res1);
+			}
+		</script>
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script>
+			AOS.init();
+		</script>
+	</body>
+</html>				

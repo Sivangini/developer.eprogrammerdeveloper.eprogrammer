@@ -1,0 +1,161 @@
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+   <script src="jslib/jquery-3.7.1.min.js"></script>
+
+    <style>
+        .err {
+            color: rgb(225, 38, 56);
+        }
+
+        #img {
+
+            background-image: url(./images/background.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+
+        }
+
+        h1 {
+            text-align: center;
+
+        }
+
+        .mydv {
+            width: 350px;
+            height: 400px;
+            margin: 50px auto;
+            font-family: 'Droid Serif', serif;
+            position: relative;
+
+
+        }
+
+        label {
+            color: rgb(21, 20, 20);
+            text-shadow: 0 1px 0 #fff;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        input[type=text],
+        [type=password] {
+            width: 97.7%;
+            height: 34px;
+            padding-left: 5px;
+            margin-bottom: 20px;
+            margin-top: 8px;
+            box-shadow: 0 0 5px #00F5FF;
+            border: 2px solid #00F5FF;
+            color: #4f4f4f;
+            font-size: 16px;
+        }
+
+        #save_btn1{
+            font-size: 20px;
+            margin-top: 10px;
+            margin-left: 60%;
+            background: red;
+            border: 1px solid #0F799E;
+            padding: 7px 35px;
+            color: white;
+            text-shadow: 0px 1px 0px #13506D;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 40%;
+        }
+
+        #img1 {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 40px;
+            width: 40px;
+        }
+        /* @media screen and (min-width: 480px) {
+            #img1 {
+                position: absolute;
+                right: -27%;
+                top: -79;
+            }
+        } */
+
+    </style>
+</head>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+<body id="img">
+
+    <div class="container-fluid">
+
+        <div style="width: 50%; min-height: 400px; background: linear-gradient( rgba(67, 207, 241, 0.171),rgb(138, 137, 135));
+            padding: 20px; margin: 50px auto;box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div id="clickimage" class="col-sm-6">
+
+                    <img type="myImage" alt="ButtonImage" id="img1" src="./images/CrossButton.png"
+                        style="position: absolute;top: 45px;width: 30px;height: 30px;left:72%;" class="img-fluid " />
+
+
+                    <form class="form " method="post" action="#">
+
+                        <h1>Login Here</h1>
+                        <label>Email</label><br>
+                        <input type="email" class="form-control " placeholder="Enter your email.." id="email" /><br>
+                        <label>Password</label><br>
+                        <input type="password" placeholder="Enter your password" id="password" class="form-control" /><br>
+
+                        <input type="button" name="register" id="save_btn1" value="Login" class="btn mb-4 "
+                            style="margin-left: 25%;" />
+                    </form>
+                </div>
+                <div class="col-sm-3"></div>
+            </div>
+  </div>
+
+    </div>
+            <script>
+              	$(document).ready(function(){
+$("#save_btn1").click(function(){
+   var email,password;
+   email=$("#email").val();
+   password=$("#password").val();
+ 
+   let user_record=new Array();
+   user_record=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+
+   //check email and password for login
+   if(user_record.some((v)=>{
+     return v.email==email && v.password==password 
+   })){
+      alert("Login Successfully");
+	  let current_user=user_record.filter((v)=>{
+	   //now collect the current session data
+	   return v.email==email && v.password==password
+	  })[0]
+	  //set the value of name and email in local storage for future use
+	  localStorage.setItem("name",current_user.name);
+	  localStorage.setItem("email",current_user.email);
+	  window.location.href="dash.html";
+   }
+	else
+	{
+	   alert("Login Fail");
+	}
+
+});	
+});	
+            </script>
+      
+</body>
+
+</html>
